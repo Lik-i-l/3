@@ -1,0 +1,14 @@
+const b = 2.5
+const xValues = [1.28, 3.28, 0.4, 1.1, 2.4, 3.6, 1.7, 3.9]
+
+function f(x: number, b: number): number {
+    const inner = b ** 3 + x ** 3
+    const numerator = 1 + Math.sin(inner) ** 2
+    const denominator = Math.cbrt(inner)
+    return numerator / denominator
+}
+
+for (const x of xValues) {
+    const y = f(x, b)
+    console.log(`x = ${x}, y = ${y.toFixed(2)}`)
+}
